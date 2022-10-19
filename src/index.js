@@ -8,6 +8,7 @@ import { showName } from "./modules/name.js";
 import { setBg } from "./modules/slider.js";
 import { getQuote } from "./modules/quotes.js";
 import { showWeather } from "./modules/weather.js";
+import { renderAudio } from "./modules/audio.js";
 
 showTime('.time');
 showDate('.date');
@@ -16,3 +17,4 @@ showName('.name');
 setBg();
 getQuote();
 showWeather('Tula');
+renderAudio();
