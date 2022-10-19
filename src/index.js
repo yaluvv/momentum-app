@@ -4,8 +4,10 @@ import './style/style.css';
 import { showTime } from "./modules/time.js";
 import { showDate } from "./modules/date.js";
 import { showGreeting } from "./modules/greeting.js";
+import { showName } from "./modules/name.js";
 
 
 showTime('.time');
 showDate('.date');
 showGreeting('.greeting');
+showName('.name');
