@@ -1,23 +1,30 @@
-const quote = document.querySelector('.quote');
-const author = document.querySelector('.author');
-const quoteBtn = document.querySelector('.change-quote')
+const quotes = () => {
 
-async function getQuote() {
-    const quotes = 'https://yaluvv.github.io/momentum-app/data.json'
-    const res = await fetch(quotes);
-    const data = await res.json();
+    const quote = document.querySelector('.quote');
+    const author = document.querySelector('.author');
+    const quoteBtn = document.querySelector('.change-quote')
 
-    const numberOfQuote = Math.floor(Math.random() * data.length)
+    async function getQuote() {
+        const quotes = 'https://yaluvv.github.io/momentum-app/data.json'
+        const res = await fetch(quotes);
+        const data = await res.json();
 
-    quote.textContent = data[numberOfQuote].text
-    author.textContent = data[numberOfQuote].author
+        const numberOfQuote = Math.floor(Math.random() * data.length)
+
+        quote.textContent = data[numberOfQuote].text
+        author.textContent = data[numberOfQuote].author
+    }
+
+    function changeQuote() {
+        quoteBtn.addEventListener('click', () => {
+            getQuote()
+        })
+    }
+    getQuote()
+    changeQuote()
+
 }
 
-function changeQuote() {
-    quoteBtn.addEventListener('click', () => {
-        getQuote()
-    })
-}
-changeQuote()
 
-export { getQuote }
+
+export default quotes;

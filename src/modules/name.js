@@ -1,13 +1,20 @@
-function showName(element) {
-    const name = document.querySelector(element)
+const name = () => {
 
-    name.addEventListener('input', () => {
-        localStorage.setItem('name', name.value)
-    })
+    function showName(element) {
+        const name = document.querySelector(element)
 
-    name.value = localStorage.getItem('name')
+        name.addEventListener('input', () => {
+            localStorage.setItem('name', name.value)
+        })
 
+        name.value = localStorage.getItem('name')
+
+    }
+
+    showName('.name')
 }
 
-export { showName }
+
+
+export default name;
 

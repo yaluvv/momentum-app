@@ -1,11 +1,17 @@
-function showTime(element) {
-    const time = document.querySelector(element)
-    const date = new Date;
-    const currentTime = date.toLocaleTimeString()
+const time = () => {
 
-    time.textContent = currentTime
+    function showTime(element) {
+        const time = document.querySelector(element)
+        const date = new Date;
+        const currentTime = date.toLocaleTimeString()
 
-    setTimeout(() => showTime(element), 1000)
+        time.textContent = currentTime
+
+        setTimeout(() => showTime(element), 1000)
+    }
+
+    showTime('.time');
 }
 
-export { showTime }
+
+export default time;
