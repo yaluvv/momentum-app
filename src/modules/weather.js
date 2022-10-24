@@ -8,10 +8,11 @@ const weather = () => {
 
     async function getWeather(city) {
         const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=ru&appid=481675063c4d401c0d9fb14af851f41e&units=metric`;
-        const res = await fetch(url);
-        const data = await res.json()
+
 
         try {
+            const res = await fetch(url);
+            const data = await res.json()
             weatherIcon.classList.add(`owf-${data.weather[0].id}`);
             temperature.textContent = `${data.main.temp}°C`;
             weatherDescription.textContent = data.weather[0].description;
